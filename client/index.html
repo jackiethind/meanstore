@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title>Mini Mean Store</title>
+    <script src="jquery/dist/jquery.js" ></script>
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css" />
+    <!-- <link rel="stylesheet" href="assets/css/styles.css" /> -->
+    <script src="angular/angular.js"></script>
+    <script src="angular-route/angular-route.js"></script>
+    <script src="angular-messages/angular-messages.js"></script>
+    <script src ="./assets/app.js"></script>
+    <script src="./assets/controllers/customersController.js"></script>
+    <script src="./assets/controllers/dashboardController.js"></script>
+    <script src="./assets/controllers/productsController.js"></script>
+    <script src="./assets/controllers/ordersController.js"></script>
+    <!--
+
+    -->
+    <!-- <script src="./assets/controllers/deleteController.js"></script> -->
+    <script src="./assets/factories/CustomerFactory.js"></script>
+    <script src="./assets/factories/ProductFactory.js"></script>
+    <script src="./assets/factories/OrderFactory.js"></script>
+  </head>
+  <body>
+      <div class="container">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#!/dashboard">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#!/products">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#!/orders">Orders</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#!/customers">Customers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#!/new">Settings</a>
+            </li>
+          </ul>
+          <div ng-view></div>
+      </div>
+  </body>
+</html>

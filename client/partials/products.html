@@ -1,0 +1,38 @@
+<div ng-controller = "productsController">
+    <h1>Products Partial</h1>
+    <div ng-if="errormessage">
+      <p>{{errormessage}}</p>
+    </div>
+    <div>
+
+        <h3>Add a new product</h3>
+        <hr/>
+        <form ng-submit="createProduct()">
+            <label for="name">Name:</label>
+            <input type="text" ng-model="new_product.name">
+            <label for="image">Image(Url):</label>
+            <input type="text" ng-model="new_product.url">
+            <label for="description">Description:</label>
+            <textarea name="description" rows="4" cols="50" ng-model="new_product.description"></textarea>
+            <label for="quantity">Initial Quantity:</label>
+            <select name="quantity" ng-options="q for q in initialQuantity" ng-model="new_product.quantity">
+                <option ng-bind="q"></option>
+            </select>
+            <input type="submit" value="Make Product">
+        </form>
+        <table class="table table-striped">
+        <thead>
+          <th>Product Name</th>
+          <th>Quantity Avaliable</th>
+          <th>Image</th>
+        </thead>
+        <tbody>
+          <tr ng-repeat="p in products">
+            <td ng-bind="p.name"></td>
+            <td ng-bind="p.quantity"></td>
+            <td><img src="{{p.url}}"/></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>
