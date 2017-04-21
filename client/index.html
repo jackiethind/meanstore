@@ -10,38 +10,22 @@
     <script src="angular-route/angular-route.js"></script>
     <script src="angular-messages/angular-messages.js"></script>
     <script src ="./assets/app.js"></script>
-    <script src="./assets/controllers/customersController.js"></script>
+    <script src="./assets/controllers/questionsController.js"></script>
     <script src="./assets/controllers/dashboardController.js"></script>
-    <script src="./assets/controllers/productsController.js"></script>
-    <script src="./assets/controllers/ordersController.js"></script>
-    <!--
+    <script src="./assets/controllers/showController.js"></script>
+    <script src="./assets/factories/QuestionFactory.js"></script>
 
-    -->
-    <!-- <script src="./assets/controllers/deleteController.js"></script> -->
-    <script src="./assets/factories/CustomerFactory.js"></script>
-    <script src="./assets/factories/ProductFactory.js"></script>
-    <script src="./assets/factories/OrderFactory.js"></script>
   </head>
   <body>
       <div class="container">
-          <ul class="nav">
-            <li class="nav-item">
-              <a class="nav-link" href="#!/dashboard">Dashboard</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#!/products">Products</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#!/orders">Orders</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#!/customers">Customers</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#!/new">Settings</a>
-            </li>
-          </ul>
-          <div ng-view></div>
+          <div ng-controller = "dashboardController">
+              <h3>You are logged in as: <span ng-bind="login"></span>. &nbsp &nbsp &nbsp
+              <button ng-click = "logOut()">Log Out</button>
+            </h3>
+            <a href="#!/">Home</a>
+          </div>
+          <div ng-view="">
+          </div>
       </div>
   </body>
 </html>

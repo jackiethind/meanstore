@@ -1,1 +1,65 @@
 <h1>Dashboard Partial</h1>
+<a href="#!/askquestion">Ask a question!</a>
+<table class="table table-striped">
+<thead>
+  <th>Question</th>
+  <th>Asked By:</th>
+  <th>Answers</th>
+  <th>Show</th>
+  <th>Answer</th>
+</thead>
+<tbody>
+  <tr ng-repeat="q in questions">
+    <td ng-bind="q.question"></td>
+    <td ng-bind="q.user"></td>
+    <td ng-bind="q.answerCount"></td>
+    <td>
+      <button type="button" ng-click="showQuestion(q)">Show</button>
+    </td>
+    <td>
+      <button type="button" ng-click="answerQuestion(q)">Answer</button>
+    </td>
+  </tr>
+</tbody>
+</table>
+<div ng-if="showquestion">
+  <h1>Showing you a Question!</h1>
+  <h1>Question:</h1>
+  <h4 ng-bind="showquestion[0].question"></h4>
+  <h5 ng-bind="showquestion[0].description"></h5>
+
+</div>
+<div ng-if="answerquestion">
+  <h1>Answer a Question!</h1>
+  <h1>Question:</h1>
+  <h4 ng-bind="answerquestion[0].question"></h4>
+  <h5 ng-bind="answerquestion[0].description"></h5>
+  <div ng-if="errormessage">
+    <p>{{errormessage}}</p>
+  </div>
+  <div>
+      <h6>Enter your Answer Below</h6>
+      <hr/>
+      <form ng-submit="createAnswer()">
+          <label for="answer">Your Answer:</label>
+          <input type="text"  ng-model="answerquestion[0].answers[answerCounter]">
+          <label for="description">Supporting details:</label>
+          <textarea name="description" rows="4" cols="50" ng-model="answerquestion[0].answerDetail"></textarea>
+          <input type="submit" value="Submit">
+      </form>
+      <!-- <table class="table table-striped">
+      <thead>
+        <th>Product Name</th>
+        <th>Quantity Avaliable</th>
+        <th>Image</th>
+      </thead>
+      <tbody>
+        <tr ng-repeat="p in products">
+          <td ng-bind="p.name"></td>
+          <td ng-bind="p.quantity"></td>
+          <td><img src="{{p.url}}"/></td>
+        </tr>
+      </tbody>
+    </table> -->
+  </div>
+</div>
