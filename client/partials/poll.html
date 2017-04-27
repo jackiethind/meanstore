@@ -1,0 +1,50 @@
+<div>
+    <h1>Show Poll Partial</h1>
+    <div ng-if="errormessage">
+      <p>{{errormessage}}</p>
+    </div>
+    <a href='#!/dashboard'>Go to Polls</a>
+    <h2>{{selectedPoll.question}}</h2>
+    <div>
+        <h3>Click the vote button to choose one!</h3>
+        <hr/>
+        <table class="table table-striped">
+        <thead>
+          <th>Option</th>
+          <th>Current Count of Votes</th>
+          <th>Action</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{selectedPoll.option1}}</td>
+            <td>{{selectedPoll.option1vote}}</td>
+            <td>
+              <button type="button" class="btn btn-success" ng-click="upvote1()"><i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
+            </td>
+          </tr>
+          <tr>
+            <td>{{selectedPoll.option2}}</td>
+            <td>{{selectedPoll.option2vote}}</td>
+            <td>
+              <button type="button" class="btn btn-success" ng-click="upvote2()"><i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
+
+            </td>
+          </tr>
+          <tr>
+            <td>{{selectedPoll.option3}}</td>
+            <td>{{selectedPoll.option3vote}}</td>
+            <td>
+              <button type="button" class="btn btn-success" ng-click="upvote3()"><i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
+            </td>
+          </tr>
+          <tr>
+            <td>{{selectedPoll.option4}}</td>
+            <td>{{selectedPoll.option4vote}}</td>
+            <td>
+              <button type="button" class="btn btn-success" ng-click="upvote4()"><i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>

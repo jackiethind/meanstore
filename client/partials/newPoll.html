@@ -1,0 +1,30 @@
+<div>
+    <h1>Make a new Poll Partial</h1>
+    <div ng-if="errormessage">
+      <p>{{errormessage}}</p>
+    </div>
+    <div>
+        <a href='#!/dashboard'>Cancel</a>
+        <h3>New Poll</h3>
+        <p>Create a question and its poll options below:</p>
+        <hr/>
+        <form ng-submit="createPoll()">
+            <label for="question">Question:</label>
+            <input type="text" ng-model="new_poll.question">
+            <br>
+            <label for="option1">Option 1:</label>
+            <input type="text" ng-model="new_poll.option1">
+            <br>
+            <label for="option1">Option 2:</label>
+            <input type="text" ng-model="new_poll.option2">
+            <br>
+            <label for="option1">Option 3:</label>
+            <input type="text" ng-model="new_poll.option3">
+            <br>
+            <label for="option1">Option 4:</label>
+            <input type="text" ng-model="new_poll.option4">
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>
