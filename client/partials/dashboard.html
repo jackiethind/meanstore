@@ -14,9 +14,10 @@
     <tbody>
       <tr ng-repeat="p in polls | filter: search">
         <td ng-bind="p.user"></td>
+
         <td><a href='#!/poll/{{p._id}}'>{{p.question}}</a></td>
         <td ng-bind="p.createdAt"></td>
-        <td>
+        <td ng-if="p.user == user">
           <button type="button" class="btn btn-danger" ng-click="deletePoll(p._id)">Delete</button>
         </td>
       </tr>
