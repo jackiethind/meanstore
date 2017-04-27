@@ -11,7 +11,8 @@ app.controller('dashboardController', function($scope, PollFactory, $location){
     }
     // logs user out from this page
     $scope.logout = function () {
-        PollFactory.logout();
+        $scope.user = null;
+        PollFactory.logOut();
     }
 
     $scope.polls =[];

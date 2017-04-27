@@ -7,6 +7,7 @@ app.controller('pollController', function($scope, PollFactory, $location, $route
         console.log("The logged in user is " + $scope.user);
     }
     else {
+        $scope.user = null;
         $location.url('/');
     }
 

@@ -14,7 +14,6 @@
     <tbody>
       <tr ng-repeat="p in polls | filter: search">
         <td ng-bind="p.user"></td>
-
         <td><a href='#!/poll/{{p._id}}'>{{p.question}}</a></td>
         <td ng-bind="p.createdAt"></td>
         <td ng-if="p.user == user">

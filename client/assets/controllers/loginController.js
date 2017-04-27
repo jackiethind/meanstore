@@ -11,6 +11,7 @@ app.controller('loginController', function($scope, PollFactory, $location){
         $scope.user = PollFactory.user;
     }
     else {
+        $scope.user = null;
         $location.url('/');
     }
 
